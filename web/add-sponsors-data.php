@@ -5,7 +5,7 @@
 		
 		$sql_query = "INSERT INTO sponsors (img) VALUES ('$img')";
 		
-		if (mysql_query($sql_query))
+		if (mysqli_query($sql_query))
 		{
 			?>
 			<script type="text/javascript">
@@ -17,7 +17,7 @@
 		{
 			?>
 			<script type="text/javascript">
-				alert('Error: ' + <?php echo mysql_error() ?>);
+				alert('Error: ' + <?php echo mysqli_error() ?>);
 			</script>
 			<?php
 		}
@@ -25,8 +25,8 @@
 	if (isset($_GET['edit_id']))
 	{
 		$sql_query = "SELECT * FROM sponsors WHERE id = ".$_GET['edit_id'];
-		$result_set=mysql_query($sql_query);
-		$fetched_row=mysql_fetch_array($result_set);
+		$result_set=mysqli_query($sql_query);
+		$fetched_row=mysqli_fetch_array($result_set);
 	}
 	if (isset($_POST['btn-update']))
 	{
@@ -34,7 +34,7 @@
 		
 		$sql_query = "UPDATE sponsors SET img_url = '$img' WHERE id = ".$_GET['edit_id'];
 		
-		if (mysql_query($sql_query))
+		if (mysqli_query($sql_query))
 		{
 			?>
 			<script type="text/javascript">

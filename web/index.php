@@ -4,31 +4,31 @@
   if (isset($_GET['delete_artists_id']))
   {
     $sql_query = "DELETE FROM artists WHERE id = ".$_GET['delete_artists_id'];
-    mysql_query($sql_query);
+    mysqli_query($sql_query);
     header("Location: $_SERVER[PHP_SELF]");
   }
   if (isset($_GET['delete_events_id']))
   {
     $sql_query = "DELETE FROM events WHERE id = ".$_GET['delete_events_id'];
-    mysql_query($sql_query);
+    mysqli_query($sql_query);
     header("Location: $_SERVER[PHP_SELF]");
   }
   if (isset($_GET['delete_merch_id']))
   {
     $sql_query = "DELETE FROM merch WHERE id = ".$_GET['delete_merch_id'];
-    mysql_query($sql_query);
+    mysqli_query($sql_query);
     header("Location: $_SERVER[PHP_SELF]");
   }
   if (isset($_GET['delete_sponsors_id']))
   {
     $sql_query = "DELETE FROM sponsors WHERE id = ".$_GET['delete_sponsors_id'];
-    mysql_query($sql_query);
+    mysqli_query($sql_query);
     header("Location: $_SERVER[PHP_SELF]");
   }
   if (isset($_GET['delete_copy_id']))
   {
     $sql_query = "DELETE FROM copy WHERE id = ".$_GET['delete_copy_id'];
-    mysql_query($sql_query);
+    mysqli_query($sql_query);
     header("Location: $_SERVER[PHP_SELF]");
   }
 ?>
@@ -112,8 +112,8 @@
 		</tr>
     <?php
       $sql_query = "SELECT * FROM artists";
-      $result_set = mysql_query($sql_query);
-      while ($row = mysql_fetch_row($result_set))
+      $result_set = mysqli_query($sql_query);
+      while ($row = mysqli_fetch_row($result_set))
       {
     ?>
   		<tr>
@@ -142,8 +142,8 @@
 		</tr>
     <?php
       $sql_query = "SELECT * FROM events";
-      $result_set = mysql_query($sql_query);
-      while ($row = mysql_fetch_row($result_set))
+      $result_set = mysqli_query($sql_query);
+      while ($row = mysqli_fetch_row($result_set))
       {
     ?>
   		<tr>
@@ -171,8 +171,8 @@
 		</tr>
     <?php
       $sql_query = "SELECT * FROM merch";
-      $result_set = mysql_query($sql_query);
-      while ($row = mysql_fetch_row($result_set))
+      $result_set = mysqli_query($sql_query);
+      while ($row = mysqli_fetch_row($result_set))
       {
     ?>
   		<tr>
@@ -196,8 +196,8 @@
 		</tr>
     <?php
       $sql_query = "SELECT * FROM sponsors";
-      $result_set = mysql_query($sql_query);
-      while ($row = mysql_fetch_row($result_set))
+      $result_set = mysqli_query($sql_query);
+      while ($row = mysqli_fetch_row($result_set))
       {
     ?>
   		<tr>
@@ -220,8 +220,8 @@
 		</tr>
     <?php
       $sql_query = "SELECT * FROM copy";
-      $result_set = mysql_query($sql_query);
-      while ($row = mysql_fetch_row($result_set))
+      $result_set = mysqli_query($sql_query);
+      while ($row = mysqli_fetch_row($result_set))
       {
     ?>
   		<tr>

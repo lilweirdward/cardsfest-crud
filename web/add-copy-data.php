@@ -6,7 +6,7 @@
 		
 		$sql_query = "INSERT INTO copy (section, copy) VALUES ('$section', '$copy')";
 		
-		if (mysql_query($sql_query))
+		if (mysqli_query($sql_query))
 		{
 			?>
 			<script type="text/javascript">
@@ -18,7 +18,7 @@
 		{
 			?>
 			<script type="text/javascript">
-				alert('Error: ' + <?php echo mysql_error() ?>);
+				alert('Error: ' + <?php echo mysqli_error() ?>);
 			</script>
 			<?php
 		}
@@ -26,8 +26,8 @@
 	if (isset($_GET['edit_id']))
 	{
 		$sql_query = "SELECT * FROM copy WHERE id = ".$_GET['edit_id'];
-		$result_set=mysql_query($sql_query);
-		$fetched_row=mysql_fetch_array($result_set);
+		$result_set=mysqli_query($sql_query);
+		$fetched_row=mysqli_fetch_array($result_set);
 	}
 	if (isset($_POST['btn-update']))
 	{
@@ -36,7 +36,7 @@
 		
 		$sql_query = "UPDATE copy SET section = '$section', copy = '$copy' WHERE id = ".$_GET['edit_id'];
 		
-		if (mysql_query($sql_query))
+		if (mysqli_query($sql_query))
 		{
 			?>
 			<script type="text/javascript">

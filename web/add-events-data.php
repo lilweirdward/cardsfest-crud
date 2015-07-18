@@ -9,7 +9,7 @@
 		
 		$sql_query = "INSERT INTO events (event_name, location, description, time_start, time_end) VALUES ('$name', '$location', '$description', '$timestart', '$timeend')";
 		
-		if (mysql_query($sql_query))
+		if (mysqli_query($sql_query))
 		{
 			?>
 			<script type="text/javascript">
@@ -29,8 +29,8 @@
 	if (isset($_GET['edit_id']))
 	{
 		$sql_query = "SELECT * FROM events WHERE id = ".$_GET['edit_id'];
-		$result_set=mysql_query($sql_query);
-		$fetched_row=mysql_fetch_array($result_set);
+		$result_set=mysqli_query($sql_query);
+		$fetched_row=mysqli_fetch_array($result_set);
 	}
 	if (isset($_POST['btn-update']))
 	{
@@ -42,7 +42,7 @@
 		
 		$sql_query = "UPDATE events SET event_name = '$name', location = '$location', description = '$description', time_start = '$timestart', time_end = '$timeend' WHERE id = ".$_GET['edit_id'];
 		
-		if (mysql_query($sql_query))
+		if (mysqli_query($sql_query))
 		{
 			?>
 			<script type="text/javascript">

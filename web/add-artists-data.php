@@ -8,7 +8,7 @@
 		
 		$sql_query = "INSERT INTO artists (name, title, description, soundcloud_url) VALUES ('$name', '$title', '$description', '$soundcloud')";
 		
-		if (mysql_query($sql_query))
+		if (mysqli_query($sql_query))
 		{
 			?>
 			<script type="text/javascript">
@@ -28,8 +28,8 @@
 	if (isset($_GET['edit_id']))
 	{
 		$sql_query = "SELECT * FROM artists WHERE id = ".$_GET['edit_id'];
-		$result_set=mysql_query($sql_query);
-		$fetched_row=mysql_fetch_array($result_set);
+		$result_set=mysqli_query($sql_query);
+		$fetched_row=mysqli_fetch_array($result_set);
 	}
 	if (isset($_POST['btn-update']))
 	{
@@ -40,7 +40,7 @@
 		
 		$sql_query = "UPDATE artists SET name = '$name', title = '$title', description = '$description', soundcloud_url = '$soundcloud' WHERE id = ".$_GET['edit_id'];
 		
-		if (mysql_query($sql_query))
+		if (mysqli_query($sql_query))
 		{
 			?>
 			<script type="text/javascript">
